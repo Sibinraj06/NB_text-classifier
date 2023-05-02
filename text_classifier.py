@@ -30,8 +30,8 @@ with open('model.pkl', 'wb') as f:
     pickle.dump(naivebayes, f)
 
 # Define the Streamlit app
-st.header('Demo')
-input_text = st.text_area("Please enter the text", value="")
+st.header('News catogorization')
+input_text = st.text_area("Please enter the text here ", value="")
 if st.button("Check"):
     input_text_transformed = vector.transform([input_text]).toarray()
     prediction = naivebayes.predict(input_text_transformed)[0]
